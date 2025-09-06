@@ -121,6 +121,16 @@
                 height: 48px;
             }
         }
+		
+		.text-container {
+		max-width: 800px;
+		width: 100%;
+		text-align: left; /* aligns all lines to the left */
+		}
+		.text-container p {
+			margin: 15px 0; /* vertical spacing only */
+		}
+
     </style>
 </head>
 <body>
@@ -130,14 +140,16 @@
 
     <h1>About This Page</h1>
     
-    <p>
-        Welcome to <strong>FNC Analytics</strong>.<br>
+	<div class="text-container">
+		<p>
+		Welcome to <strong>FNC Analytics</strong>.<br>
         This page hosts an embedded Power BI report showcasing key analytics.<br>
         The goal is to provide interactive insights in a simple, accessible format.
-    </p>
-    <p>
-        In future updates, additional reports and features may be added to enhance the experience.
-    </p>
+		</p>
+		<p>
+		In future updates, additional reports and features may be added to enhance the experience.
+		</p>
+	</div>
 
     <a href="index.html">← Back to Report</a>
 </body>
