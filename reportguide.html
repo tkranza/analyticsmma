@@ -112,6 +112,65 @@
             background-size: 20px 20px;
             pointer-events: none;
         }
+
+        /* Responsive tweaks */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 26px;
+                padding: 12px 18px;
+            }
+
+            .report-section > p.main {
+                font-size: 20px;
+            }
+
+            .report-section > p.subparagraph {
+                font-size: 16px;
+            }
+
+            ul.subparagraph {
+                font-size: 15px;
+                margin-left: 15px;
+            }
+
+            .logo img {
+                width: 55px;
+                height: 55px;
+            }
+
+            a.back-link {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+                padding: 10px 15px;
+            }
+
+            .report-section > p.main {
+                font-size: 18px;
+            }
+
+            .report-section > p.subparagraph {
+                font-size: 15px;
+            }
+
+            ul.subparagraph {
+                font-size: 14px;
+                margin-left: 12px;
+            }
+
+            .logo img {
+                width: 48px;
+                height: 48px;
+            }
+
+            a.back-link {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -121,7 +180,7 @@
 
     <h1>Report Pages Guide</h1>
 
-    <!-- Page 1 -->
+    <!-- Page sections (unchanged content) -->
     <div class="report-section">
         <p class="main">Page 1 - Fighter Profile</p>
         <p class="subparagraph">For the chosen fighter inside a chosen weight-class it shows fighter bio, performance metrics, and a fighting style. Can be analyzed for a specific fight or across selected range of multiple fights.</p>
@@ -188,7 +247,6 @@
         </ul>
     </div>
 
-    <!-- Page 2 -->
     <div class="report-section">
         <p class="main">Page 2 - Roster Analysis I</p>
         <p class="subparagraph">Shows overall roster analysis.</p>
@@ -207,7 +265,6 @@
         </ul>
     </div>
 
-    <!-- Page 3 -->
     <div class="report-section">
         <p class="main">Page 3 - Roster Analysis II</p>
         <p class="subparagraph">Shows rankings based on selected criteria - Fight finish type & Weight-class.</p>
@@ -218,7 +275,6 @@
         </ul>
     </div>
 
-    <!-- Page 4 -->
     <div class="report-section">
         <p class="main">Page 4 - Fights Analysis I</p>
         <p class="subparagraph">Fight finishes analysis from perspective of events.</p>
@@ -238,7 +294,6 @@
         </ul>
     </div>
 
-    <!-- Page 5 -->
     <div class="report-section">
         <p class="main">Page 5 - Fights Analysis II</p>
         <p class="subparagraph">Fight dynamics analysis from perspective of weight-classes.</p>
