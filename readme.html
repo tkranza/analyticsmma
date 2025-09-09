@@ -105,6 +105,16 @@
             text-decoration: underline;
         }
 
+        /* Disclaimer */
+        .disclaimer {
+            font-size: 13px;
+            color: #aaa;
+            max-width: 800px;
+            margin-top: 40px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
         /* Optional subtle background pattern */
         body::before {
             content: "";
@@ -144,6 +154,11 @@
                 width: 18px;
                 height: 18px;
             }
+
+            .disclaimer {
+                font-size: 12px;
+                padding: 0 10px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -171,6 +186,10 @@
             .contact a img {
                 width: 16px;
                 height: 16px;
+            }
+
+            .disclaimer {
+                font-size: 11px;
             }
         }
 		
@@ -202,16 +221,24 @@
 
         <!-- Contact details -->
         <div class="contact">
-		<p>
-		Contact details:
-		</p>
+		    <p>Contact details:</p>
             <a href="mailto:tin.kranzelic@gmail.com">📧 tin.kranzelic@gmail.com</a>
             <a href="https://www.linkedin.com/in/tin-kranželić-19b12b199" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:20px;height:20px;"> LinkedIn Profile
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"> LinkedIn Profile
             </a>
         </div>
 	</div>
 
     <a class="back-link" href="index.html">← Back to Report</a>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+        <p>
+        Disclaimer:  
+        This site is an independent, unofficial, and non-commercial project intended for informational purposes only.  
+        It is not affiliated with, endorsed by, or officially associated with any company or organization.  
+        All data used is publicly available. No copyrighted or proprietary materials are included without permission.
+        </p>
+    </div>
 </body>
 </html>
