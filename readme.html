@@ -53,8 +53,29 @@
             margin: 15px auto;
         }
 
+        /* Contact paragraph */
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .contact a {
+            color: #1e90ff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .contact a img {
+            width: 20px;
+            height: 20px;
+        }
+
         /* Back link */
-        a {
+        a.back-link {
             display: inline-block;
             margin-top: 30px;
             text-align: center;
@@ -64,7 +85,7 @@
             font-weight: 500;
             transition: color 0.3s ease;
         }
-        a:hover {
+        a.back-link:hover {
             color: #63b3ff;
             text-decoration: underline;
         }
@@ -92,13 +113,21 @@
                 padding: 0 10px;
             }
 
-            a {
+            a.back-link {
                 font-size: 15px;
             }
 
             .logo img {
                 width: 55px;
                 height: 55px;
+            }
+
+            .contact {
+                font-size: 15px;
+            }
+            .contact a img {
+                width: 18px;
+                height: 18px;
             }
         }
 
@@ -112,7 +141,7 @@
                 font-size: 15px;
             }
 
-            a {
+            a.back-link {
                 font-size: 14px;
             }
 
@@ -120,15 +149,23 @@
                 width: 48px;
                 height: 48px;
             }
+
+            .contact {
+                font-size: 14px;
+            }
+            .contact a img {
+                width: 16px;
+                height: 16px;
+            }
         }
 		
 		.text-container {
-		max-width: 800px;
-		width: 100%;
-		text-align: left; /* aligns all lines to the left */
+		    max-width: 800px;
+		    width: 100%;
+		    text-align: left;
 		}
 		.text-container p {
-			margin: 15px 0; /* vertical spacing only */
+		    margin: 15px 0;
 		}
 
     </style>
@@ -142,15 +179,24 @@
     
 	<div class="text-container">
 		<p>
-		Welcome to <strong>FNC Analytics</strong>.<br>
-        This page hosts an embedded Power BI report showcasing key analytics.<br>
-        The goal is to provide interactive insights in a simple, accessible format.
+		Welcome to <strong>FNC Analytics</strong>. This page hosts an embedded Power BI report showcasing key analytics. The goal is to provide interactive insights in a simple, accessible format.
 		</p>
 		<p>
 		In future updates, additional reports and features may be added to enhance the experience.
 		</p>
+
+        <!-- Contact details -->
+        <div class="contact">
+		<p>
+		Contact details:
+		</p>
+            <a href="mailto:tin.kranzelic@gmail.com">📧 tin.kranzelic@gmail.com</a>
+            <a href="https://www.linkedin.com/in/tin-kranželić-19b12b199" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:20px;height:20px;"> LinkedIn Profile
+            </a>
+        </div>
 	</div>
 
-    <a href="index.html">← Back to Report</a>
+    <a class="back-link" href="index.html">← Back to Report</a>
 </body>
 </html>
