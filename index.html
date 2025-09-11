@@ -90,7 +90,7 @@
             padding: 15px;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-            margin: 20px auto 30px auto;
+            margin: 20px auto 10px auto;
         }
 
         iframe {
@@ -98,6 +98,15 @@
             height: 75vh;
             border: none;
             border-radius: 10px;
+        }
+
+        /* Last refresh section */
+        .last-refresh {
+            font-size: 14px;
+            color: #bbb;
+            text-align: center;
+            margin: 10px auto 30px auto;
+            font-style: italic;
         }
 
         /* Optional subtle pattern background */
@@ -149,6 +158,10 @@
             iframe {
                 height: 60vh;
             }
+
+            .last-refresh {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -171,6 +184,10 @@
             src="https://app.fabric.microsoft.com/view?r=eyJrIjoiZmY4OTgxZDQtYTc4Yy00OWI5LTgwZTktY2QwNDU0MDAwNDFjIiwidCI6ImNiYzFjYzQ3LTg0ZDYtNDJhZC04YzgxLThlNDg0ODNkYzc1YiIsImMiOjl9" 
             allowfullscreen>
         </iframe>
+    </div>
+
+    <div class="last-refresh">
+        Last data refresh: <span>September 11, 2025</span>
     </div>
 </body>
 </html>
