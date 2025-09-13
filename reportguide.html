@@ -7,26 +7,27 @@
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
-	
 	gtag('config', 'G-1BB4V284GR');
 	</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FNC Analytics Report Pages Guide</title>
-	<!-- Legacy fallback -->
+
+	<!-- Favicon -->
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-	<!-- Modern browsers (big PNG, scales down automatically) -->
 	<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
-	<!-- Apple devices (home screen icon) -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background: #0d0d0d;
+            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -38,17 +39,17 @@
         /* Logo */
         .logo {
             position: absolute;
-            top: 5px;
-            left: 15px;
+            top: 10px;
+            left: 10px;
         }
         .logo img {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
 
-        /* Header */
+        /* Title */
         h1 {
             text-align: center;
             font-size: 32px;
@@ -62,37 +63,61 @@
 
         /* Section cards */
         .report-section {
+            position: relative;
             background: #111;
-            padding: 20px;
+            padding: 25px 20px;
             border-radius: 12px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.6);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             width: 90%;
             max-width: 900px;
+            border-left: 5px solid #e63946;
         }
 
-        /* Main paragraph */
+        /* Page badge */
+        .report-section::before {
+            content: attr(data-page);
+            position: absolute;
+            top: -14px;
+            left: 15px;
+            background: #e63946;
+            color: white;
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        /* Section header text */
         .report-section > p.main {
             font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
             text-align: center;
         }
 
-        /* Subparagraph / description */
+        /* Subparagraph */
         .report-section > p.subparagraph {
-            font-size: 18px;
-            margin: 10px 0;
+            font-size: 17px;
+            margin: 12px 0 20px;
             line-height: 1.6;
             text-align: left;
         }
 
         /* Nested lists */
         ul.subparagraph {
-            margin: 10px 0 10px 20px;
+            margin: 0 0 0 20px;
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.6;
             list-style-type: disc;
+        }
+        ul.subparagraph > li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        ul.subparagraph > li:last-child {
+            border-bottom: none;
         }
         ul.subparagraph ul {
             margin-left: 20px;
@@ -117,7 +142,7 @@
             text-decoration: underline;
         }
 
-        /* Optional subtle background pattern */
+        /* Background subtle grid */
         body::before {
             content: "";
             position: fixed;
@@ -131,76 +156,47 @@
         /* Responsive tweaks */
         @media (max-width: 768px) {
             h1 {
-                font-size: 26px;
-                padding: 12px 18px;
+                font-size: 28px;
+                margin-bottom: 30px;
             }
-
             .report-section > p.main {
                 font-size: 20px;
             }
-
             .report-section > p.subparagraph {
-                font-size: 16px;
-            }
-
-            ul.subparagraph {
                 font-size: 15px;
-                margin-left: 15px;
             }
-
-            .logo img {
-                width: 55px;
-                height: 55px;
-            }
-
-            a.back-link {
+            ul.subparagraph {
                 font-size: 15px;
             }
         }
-
         @media (max-width: 480px) {
             h1 {
                 font-size: 22px;
-                padding: 10px 15px;
+                margin-bottom: 20px;
             }
-
             .report-section > p.main {
                 font-size: 18px;
             }
-
-            .report-section > p.subparagraph {
-                font-size: 15px;
-            }
-
             ul.subparagraph {
-                font-size: 14px;
-                margin-left: 12px;
-            }
-
-            .logo img {
-                width: 48px;
-                height: 48px;
-            }
-
-            a.back-link {
                 font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="logo">
-        <img src="logo.png" alt="Logo">
-    </div>
+	<div class="logo">
+		<a href="index.html">
+			<img src="logo.png" alt="Logo">
+		</a>
+	</div>
 
     <h1>Report Pages Guide</h1>
 
-    <!-- Page sections (unchanged content) -->
-    <div class="report-section">
-        <p class="main">Page 1 - Fighter Profile</p>
-        <p class="subparagraph">For the chosen fighter inside a chosen weight-class it shows fighter bio, performance metrics, and a fighting style. Can be analyzed for a specific fight or across selected range of multiple fights.</p>
+    <div class="report-section" data-page="Page 1">
+        <p class="main">Fighter Profile</p>
+        <p class="subparagraph">This page provides an in-depth analysis of a selected fighter within a chosen weight class. It combines fighter background details, performance metrics, and fighting style characteristics. Data can be explored for a specific fight or aggregated across multiple fights.</p>
         <ul class="subparagraph">
-            <li>Fighter bio:
+            <li>Fighter Bio:
                 <ul>
                     <li>Nationality</li>
                     <li>Age</li>
@@ -209,12 +205,12 @@
                     <li>Fight Record</li>
                 </ul>
             </li>
-            <li>Performance metrics:
+            <li>Performance Metrics:
                 <ul>
-                    <li>Attacking accuracy:
+                    <li>Attacking Accuracy:
                         <ul>
-                            <li>Overall striking</li>
-                            <li>Type of strike:
+                            <li>Overall striking accuracy</li>
+                            <li>By strike type:
                                 <ul>
                                     <li>Punches</li>
                                     <li>Kicks</li>
@@ -222,13 +218,13 @@
                                     <li>Elbows</li>
                                 </ul>
                             </li>
-                            <li>Takedown</li>
+                            <li>Takedowns</li>
                         </ul>
                     </li>
-                    <li>Defense rate:
+                    <li>Defense Rate:
                         <ul>
-                            <li>Overall striking</li>
-                            <li>Type of strike:
+                            <li>Overall striking defense</li>
+                            <li>By strike type:
                                 <ul>
                                     <li>Punches</li>
                                     <li>Kicks</li>
@@ -236,25 +232,25 @@
                                     <li>Elbows</li>
                                 </ul>
                             </li>
-                            <li>Takedown</li>
+                            <li>Takedowns</li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li>Fighting style:
+            <li>Fighting Style:
                 <ul>
-                    <li>Volume distribution of strikes thrown</li>
-                    <li>Activity:
+                    <li>Strike volume distribution (by strike type)</li>
+                    <li>Activity level:
                         <ul>
                             <li>Strikes thrown per round</li>
-                            <li>Takedowns thrown per round</li>
+                            <li>Takedowns attempted per round</li>
                         </ul>
                     </li>
-                    <li>Fights outcome distribution per:
+                    <li>Fight outcomes distribution:
                         <ul>
-                            <li>Result</li>
-                            <li>Round</li>
-                            <li>Finish</li>
+                            <li>By result</li>
+                            <li>By round</li>
+                            <li>By finish type</li>
                         </ul>
                     </li>
                 </ul>
@@ -262,47 +258,55 @@
         </ul>
     </div>
 
-    <div class="report-section">
-        <p class="main">Page 2 - Roster Analysis I</p>
-        <p class="subparagraph">Shows overall roster demographic analysis.</p>
+    <div class="report-section" data-page="Page 2">
+        <p class="main">Roster Analysis I</p>
+        <p class="subparagraph">This page provides an overall demographic analysis of the roster, highlighting key patterns and distributions.</p>
         <ul class="subparagraph">
-            <li>Number of fighters</li>
-            <li>Countries of origin of fighters:
+            <li>Total number of fighters in the roster</li>
+            <li>Countries of origin:
                 <ul>
-                    <li>Overall number</li>
-                    <li>Heatmap</li>
+                    <li>Overall count of represented countries</li>
+                    <li>Geographic heatmap of fighter origins</li>
+                    <li>Table of countries ranked by number of fighters</li>
                 </ul>
             </li>
-            <li>Table of countries ordered by number of fighters</li>
-            <li>Line chart depicting cumulative growth of roster by year</li>
-            <li>Distribution of fighters across weight-class</li>
-            <li>Distribution of fighters across age groups</li>
+            <li>Roster growth over time:
+                <ul>
+                    <li>Line chart depicting cumulative growth of roster by year</li>
+                </ul>
+            </li>
+            <li>Weight-class distribution of fighters</li>
+            <li>Age group distribution of fighters</li>
         </ul>
     </div>
 
-    <div class="report-section">
-        <p class="main">Page 3 - Roster Analysis II</p>
-        <p class="subparagraph">Shows rankings based on selected criteria - Fight finish type & Weight-class.</p>
+    <div class="report-section" data-page="Page 3">
+        <p class="main">Roster Analysis II</p>
+        <p class="subparagraph">This page highlights fighter rankings based on selected criteria, such as fight finish type and weight class.</p>
         <ul class="subparagraph">
-            <li>TOP 10 - Longest winning streak</li>
-            <li>TOP 10 - Most wins</li>
-            <li>Most strikes landed per minute</li>
+            <li>Top 10 – Longest Winning Streaks</li>
+            <li>Top 10 – Most Career Wins</li>
+            <li>Leaders in Striking Output (highest strikes landed per minute)</li>
         </ul>
     </div>
 
-    <div class="report-section">
-        <p class="main">Page 4 - Fights Analysis I</p>
-        <p class="subparagraph">Fight finishes analysis from perspective of events.</p>
+    <div class="report-section" data-page="Page 4">
+        <p class="main">Fights Analysis I</p>
+        <p class="subparagraph">This page provides an analysis of fight finishes from the perspective of events.</p>
         <ul class="subparagraph">
-            <li>Number of events</li>
-            <li>Number of fights</li>
-			<li>Number of title fights</li>
-            <li>Number of event-hosted countries</li>
-            <li>Number of event-hosted cities</li>
-            <li>Types of finishes per event</li>
-			<li>Number of events hosted per country, city and venue (drill-down enabled)</li>
-            <li>Distribution of fight finish types</li>
-            <li>Distribution of specific finish techniques:
+            <li>Total number of events</li>
+            <li>Total number of fights</li>
+            <li>Total number of title fights</li>
+            <li>Geographic spread of events (with drill-down capability):
+                <ul>
+                    <li>Number of hosting countries</li>
+                    <li>Number of hosting cities</li>
+                    <li>Number of hosting venues</li>
+                </ul>
+            </li>
+            <li>Finish types per event</li>
+            <li>Overall distribution of fight finish types</li>
+            <li>Breakdown of finish techniques:
                 <ul>
                     <li>Submissions</li>
                     <li>Knockouts</li>
@@ -311,19 +315,19 @@
         </ul>
     </div>
 
-    <div class="report-section">
-        <p class="main">Page 5 - Fights Analysis II</p>
-        <p class="subparagraph">Fight dynamics analysis from perspective of weight-classes.</p>
+    <div class="report-section" data-page="Page 5">
+        <p class="main">Fights Analysis II</p>
+        <p class="subparagraph">This page analyzes fight dynamics across weight classes.</p>
         <ul class="subparagraph">
-            <li>Number of fights</li>
-            <li>Number of strikes thrown</li>
-            <li>Number of attempted takedowns</li>
-            <li>Number of attempted submissions</li>
+            <li>Total number of fights</li>
+            <li>Total number of strikes thrown</li>
+            <li>Total number of attempted takedowns</li>
+            <li>Total number of attempted submissions</li>
             <li>Bar chart depicting average attempted takedowns per round</li>
             <li>Column chart depicting total and average number of strikes</li>
             <li>Column chart depicting fight finish types per round</li>
-            <li>Column chart depicting Striking and Takedown accuracy</li>
-            <li>Total fights per weight-class</li>
+            <li>Column chart depicting striking and takedown accuracy</li>
+            <li>Total fights per weight class</li>
         </ul>
     </div>
 
