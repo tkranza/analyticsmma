@@ -47,6 +47,18 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
+		
+		/* Image on Readme */
+		.about-logo {
+			text-align: center;
+			margin: 20px 0;
+		}
+		.about-logo img {
+			width: 200px;  /* adjust size */
+			height: auto;
+			border-radius: 10px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.6);
+		}
 
         /* Header */
         h1 {
@@ -68,7 +80,7 @@
             margin: 15px auto;
         }
 
-        /* Contact paragraph */
+		/* Contact section */
         .contact {
             display: flex;
             flex-direction: column;
@@ -84,10 +96,16 @@
             align-items: center;
             gap: 5px;
         }
+		
         .contact a img {
             width: 20px;
             height: 20px;
         }
+		
+		.contact a:hover {
+			color: #1e90ff; /* Subtle blue only on hover */
+			transform: translateX(4px);
+		}
 
         /* Back link */
         a.back-link {
@@ -212,6 +230,12 @@
 	</div>
 
     <h1>About This Page</h1>
+	
+	<div class="text-container">
+    <!-- Inserted logo here -->
+    <div class="about-logo">
+        <img src="logo.png" alt="About Logo">
+    </div>
     
 	<div class="text-container">
 		<p>
@@ -232,6 +256,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"> LinkedIn Profile
             </a>
         </div>
+	</div>
 	</div>
 
     <a class="back-link" href="index.html">← Back to Report</a>
