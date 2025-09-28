@@ -302,7 +302,7 @@
                         <ul>
                             <li>By result</li>
                             <li>By round</li>
-                            <li>By finish type</li>
+                            <li>By finish category</li>
                         </ul>
                     </li>
                 </ul>
@@ -312,7 +312,7 @@
 	
 	<div class="report-section" data-page="Page 2">
     <p class="main">Rankings</p>
-    <p class="subparagraph">This page presents fighter rankings based on selected criteria. Results can be filtered using slicers for weight class (applicable to all criteria) and fight finish type (applicable for Wins and Losses criteria). The number of top-ranked fighters displayed can be adjusted via a configurable parameter.</p>
+    <p class="subparagraph">This page presents fighter rankings based on selected criteria. Results can be filtered using slicers for weight class (applicable to all criteria) and fight finish category (applicable for Wins and Losses criteria). The number of top-ranked fighters displayed can be adjusted via a configurable parameter.</p>
     <ul class="subparagraph">
 	    <li>Ranking Criteria:
             <ul>
@@ -389,9 +389,10 @@
                     <li>Number of hosting venues</li>
                 </ul>
             </li>
-            <li>Breakdown of fight finish types (drill-down: Finish Group -> Finish Type -> Finish Method):
+            <li>Breakdown of fight finish types (drill-down: Finish Category -> Finish Type -> Finish Method):
                 <ul>
-				    <li>Overall distribution of fight finish types</li>
+				    <li>Overall distribution of fight finish categories</li>
+					<li>Overall distribution of fight finish types</li>
                     <li>Overall distribution of fight finish methods, including:
 					<ul>
 						<li>Decisions</li>
@@ -403,8 +404,16 @@
             </li>
         </ul>
     </div>
+	
+	<div class="report-section" data-page="Page 5">
+        <p class="main">Fight Finish Tree</p>
+        <p class="subparagraph">This page presents a hierarchical breakdown of fight finishes by round and method. Users can explore outcomes such as knockouts, submissions, and decisions, with the ability to filter results by year, event, and weight class.</p>
+        <ul class="subparagraph">
+            <li>Decomposition tree of fight finishes (Category->Type->Method) per Round</li>
+        </ul>
+    </div>
 
-    <div class="report-section" data-page="Page 5">
+    <div class="report-section" data-page="Page 6">
         <p class="main">Fights Analysis II</p>
         <p class="subparagraph">This page analyzes fight dynamics across weight classes.</p>
         <ul class="subparagraph">
@@ -413,10 +422,10 @@
             <li>Total number of attempted takedowns</li>
             <li>Total number of attempted submissions</li>
 			<li>Pie chart showing the distribution of total fights across weight classes</li>
-            <li>Bar chart depicting average attempted takedowns per round</li>
-			<li>Bar chart depicting position ratio per weight class</li>
+            <li>Column chart depicting average attempted takedowns per round</li>
+			<li>Column chart depicting position ratio per weight class</li>
             <li>Column chart depicting total and average number of strikes per weight class</li>
-            <li>Bar chart depicting fight finish types per round</li>
+            <li>Column chart depicting fight finish categories per round</li>
             <li>Column chart depicting striking and takedown accuracy per weight class</li>
         </ul>
     </div>
